@@ -7,10 +7,15 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+
+	"github.com/sisatech/log15"
 )
 
 // OfficialDomain is the domain of the official Vorteil VMS website, go-vorteil.io
 const OfficialDomain = "https://go-vorteil.io"
+
+// Log ..
+var Log log15.Logger = log15.Root()
 
 // Client is an HTTP client used by all APIs. It automatically handles
 // authentication with VMS, and can otherwise be used in the same way a

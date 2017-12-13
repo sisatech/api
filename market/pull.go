@@ -13,6 +13,7 @@ import (
 func Download(project, version string) (io.ReadCloser, error) {
 
 	url := fmt.Sprintf("%s/market/api/apps/%s?refs=%s", api.OfficialDomain, project, version)
+	api.Log.Debug("Download URL: %v", url)
 
 	r, err := http.NewRequest(http.MethodGet, url, nil)
 	if err != nil {
